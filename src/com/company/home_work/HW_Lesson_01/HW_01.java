@@ -1,4 +1,4 @@
-package com.company.home_work;
+package com.company.home_work.HW_Lesson_01;
 
 public class HW_01 {
     public static void main (String [] args){

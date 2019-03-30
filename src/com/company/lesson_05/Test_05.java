@@ -13,12 +13,14 @@ public class Test_05 {
         System.out.println("Enter text: ");
         String str = bf.readLine();
         System.out.println("Enter number: ");
-        int number1 = Integer.parseInt(bf.readLine());
-        str = Integer
-        while (a < number1);
+        int n = Integer.parseInt(bf.readLine());
 
 
+        while (num<n){
+            System.out.println(str);
+            ++;
+        }
         }
     }
-*/
 
+*/
