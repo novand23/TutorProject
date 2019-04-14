@@ -1,5 +1,4 @@
-/*
-package com.company.lesson_05;
+package com.company.home_work.HW_Lesson_04;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -15,12 +14,11 @@ public class Test_05 {
         System.out.println("Enter number: ");
         int n = Integer.parseInt(bf.readLine());
 
-
-        while (num<n){
+        int a = 0;
+        while (a<n){
             System.out.println(str);
-            ++;
+            a++;
         }
         }
     }
 
-*/

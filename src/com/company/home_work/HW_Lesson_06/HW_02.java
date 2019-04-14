@@ -10,7 +10,7 @@ public class HW_02 {
     public static void main(String[] args) {
         Woman Woman = new Woman("Rita", 35);
         Cat Cat1 = new Cat("Barsik", 5, Woman);
-        DOG DOG = new DOG("Uba",8, Woman);
+        DOG DOG = new DOG("Uba", 8, Woman);
         Fish Fish = new Fish("Lou", 1, Woman);
         System.out.println(Cat1);
         System.out.println(DOG);
@@ -27,6 +27,7 @@ class Woman {
         this.name = name;
         this.age = age;
     }
+
     public String getName() {
         return name;
     }
@@ -84,12 +85,13 @@ class Cat {
         return String.format("\nName: %s, age: %d, owner: %s", getName(), getAge(), getOwner().getName());
     }
 }
-class DOG{
+
+class DOG {
     private String name;
     private int age;
     private Woman owner;
 
-    public DOG (String name, int age, Woman owner) {
+    public DOG(String name, int age, Woman owner) {
         this.name = name;
         this.age = age;
         this.owner = owner;
@@ -123,12 +125,13 @@ class DOG{
         return String.format("\nName: %s, age: %d, owner: %s", getName(), getAge(), getOwner().getName());
     }
 }
+
 class Fish {
     private String name;
     private int age;
     private Woman owner;
 
-    public Fish (String name, int age, Woman owner) {
+    public Fish(String name, int age, Woman owner) {
         this.name = name;
         this.age = age;
         this.owner = owner;
