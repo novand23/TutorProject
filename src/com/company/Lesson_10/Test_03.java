@@ -17,11 +17,12 @@ public class Test_03 {
         BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
 
         String[] ar1 = new String[5];
+        int[] ar2 = new int[5];
+
         for (int i = 0; i < ar1.length; i++) {
             System.out.println("Ведите строку: ");
             ar1[i] = bf.readLine();
         }
-        int [] ar2 = new int[5];
 
     }
 

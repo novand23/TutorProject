@@ -23,8 +23,8 @@ public class Test_02 {
         BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
 
 
-        String[] s = new String[2];
-        for (int i = 0; i < 2; i++) {
+        String[] s = new String[10];
+        for (int i = 0; i < 8; i++) {
             System.out.println("Ведите строку: ");
             s[i] = bf.readLine();
         }

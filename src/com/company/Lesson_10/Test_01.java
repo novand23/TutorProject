@@ -29,11 +29,11 @@ public class Test_01 {
 
     public static int max(int[] array) {
 
-        int [] s = array;
-        int max = s[0];
-        for (int i = 0; i < s.length; i++) {
-            if (max < s[i]) {
-                max = s[i];
+
+        int max = array[0];
+        for (int i = 0; i < array.length; i++) {
+            if (max < array[i]) {
+                max = array[i];
             }
         }
         System.out.println("Максимальное число: ");
