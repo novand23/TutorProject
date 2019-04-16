@@ -14,6 +14,7 @@ import java.io.InputStreamReader;
 public class Test_02 {
     public static void main(String[] args) throws IOException {
 
+        int[] a = array1();
     }
 
     public static int[] array1() throws IOException {
@@ -26,11 +27,13 @@ public class Test_02 {
         int[] s2 = new int[5];
         for (int i = 0; i < 5; i++) {
             s2[i] = s1[i];
-
-
-            int[] s3 = new int[5];
-
-
         }
+
+        int[] s3 = new int[5];
+        for (int i = 0; i < 5; i++) {
+            s3[i] = s1[i + 5];
+            System.out.println(s3[i]);
+        }
+        return s1;
     }
 }
