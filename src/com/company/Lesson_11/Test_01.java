@@ -14,7 +14,7 @@ public class Test_01 {
     public static void main (String[]args) throws IOException {
 
         int [] ar = array();
-        printArray(ar);
+        print(ar);
     }
 
     public static int [] array () throws IOException {
@@ -28,7 +28,7 @@ public class Test_01 {
 
         return a;
     }
-    public static void printArray( int [] array) {
+    public static void print( int [] array) {
         for (int i = array.length-1; i>=0; i--) {
             System.out.println(array[i]);
         }
