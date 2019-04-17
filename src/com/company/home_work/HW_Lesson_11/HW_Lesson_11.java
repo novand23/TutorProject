@@ -1,4 +1,4 @@
-package com.company.home_work;
+package com.company.home_work.HW_Lesson_11;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -43,7 +43,7 @@ public class HW_Lesson_11 {
     }
 
     public static void f2(int[] a, int[] b) {
-        if ((a.length % 2) == 0) {
+        if (a.length % 2 == 0) {
             for (int i = 0; i < a.length / 2; i++) {
                 b[i] = a[i + a.length / 2];
             }
