@@ -15,10 +15,11 @@ public class Test_03 {
     public static void main(String[] args) throws IOException {
 
         int[] a1 = array1();
-        int[] a2 = array2(a1);
+        int[] a2 = new int[5];
+        int[] a3 = new int[5];
         f1(a1, a2);
         System.out.println();
-        f2(a1, a2);
+        f2(a1, a3);
     }
 
     public static int[] array1() throws IOException {
@@ -29,12 +30,6 @@ public class Test_03 {
             s1[i] = Integer.parseInt(bf.readLine());
         }
         return s1;
-    }
-
-    public static int[] array2(int[] a) {
-        int[] s2 = new int[5];
-        return s2;
-
     }
 
     public static void f1(int[] a, int[] b) {
