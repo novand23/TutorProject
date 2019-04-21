@@ -41,7 +41,7 @@ public class HW_Lesson_11 {
         }
     }
 
-    public static void f2(int[] a /*5*/, int[] b /*3*/) {
+    public static void f2(int[] a, int[] b) {
 
         for (int i = 0; i<b.length ; i++) {
             b[i] = a[i + a.length/2];
