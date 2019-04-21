@@ -16,7 +16,7 @@ public class HW_Lesson_11 {
 
         int[] a1 = array1();
         int[] a2 = new int[a1.length / 2];
-        int[] a3 = new int[(a1.length + 1) / 2];
+        int[] a3 = new int[(a1.length+1)/2];
         f1(a1, a2);
         System.out.println();
         f2(a1, a3);
@@ -38,21 +38,14 @@ public class HW_Lesson_11 {
     public static void f1(int[] a, int[] b) {
         for (int i = 0; i < a.length / 2; i++) {
             b[i] = a[i];
-            System.out.println(b[i]);
         }
     }
 
-    public static void f2(int[] a, int[] b) {
-        if (a.length % 2 == 0) {
-            for (int i = 0; i < a.length / 2; i++) {
-                b[i] = a[i + a.length / 2];
-            }
-        } else {
-            for (int i = 0; i < (a.length + 1) / 2; i++) {
-                b[i] = a[i + a.length / 2];
-                System.out.println(b[i]);
+    public static void f2(int[] a /*5*/, int[] b /*3*/) {
 
-            }
+        for (int i = 0; i<b.length ; i++) {
+            b[i] = a[i + a.length/2];
+            System.out.println(b[i]);
         }
     }
 }
