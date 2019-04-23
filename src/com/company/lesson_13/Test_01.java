@@ -8,15 +8,11 @@ package com.company.lesson_13;
  * I/P    [0, 1, 2, 4, ,6, 3, 7, 8]
  * O/P    5
  */
-public class Test_01<number> {
+public class Test_01 {
     public static void main(String[] args) {
-        int[] arr = {1, 3, 2, 0, 4};
-
+        int[] arr = {1, 3, 0, 5, 4};
         sort(arr);
-
-
         System.out.println();
-
         missing_number(arr);
     }
 
@@ -34,15 +30,16 @@ public class Test_01<number> {
 
     public static int[] missing_number(int[] a) {
         for (int i = 0; i < a.length - 1; i++) {
-            if (a[i] == a[0]) {
+            if (a[0] == 0) {
                 if (a[i + 1] == a[i] + 1) {
                 } else {
-                    int num = a[i] + 1;
+                    System.out.println(a[i] + 1);
                 }
-            }else {
-                int num = a[i];
+            } else {
+                a[i] = 0;
+                System.out.println(a[i]);
             }
-            }
-            return a;
         }
+        return a;
     }
+}
