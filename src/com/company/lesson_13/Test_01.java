@@ -10,14 +10,13 @@ package com.company.lesson_13;
  */
 public class Test_01<number> {
     public static void main(String[] args) {
-        int[] arr = {1, 5, 2, 3, 0};
+        int[] arr = {1, 3, 2, 0, 4};
 
         sort(arr);
 
-        for (int i : arr) {
-            System.out.println(i);
-        }
+
         System.out.println();
+
         missing_number(arr);
     }
 
@@ -35,11 +34,15 @@ public class Test_01<number> {
 
     public static int[] missing_number(int[] a) {
         for (int i = 0; i < a.length - 1; i++) {
-            if (a[i + 1] == a[i] + 1) {
-            } else {
-                System.out.println(a[i] + 1);
+            if (a[i] == a[0]) {
+                if (a[i + 1] == a[i] + 1) {
+                } else {
+                    int num = a[i] + 1;
+                }
+            }else {
+                int num = a[i];
             }
+            }
+            return a;
         }
-        return a;
     }
-}
