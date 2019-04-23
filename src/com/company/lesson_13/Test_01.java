@@ -1,4 +1,5 @@
 package com.company.lesson_13;
+
 /*
  * Missing number
  * You are given a array of n-1 integers and these integers are in the range of 0 to n.
@@ -9,7 +10,7 @@ package com.company.lesson_13;
  */
 public class Test_01<number> {
     public static void main(String[] args) {
-        int[] arr = {4, 5, 3, 0, 1};
+        int[] arr = {1, 5, 2, 3, 0};
 
         sort(arr);
 
@@ -31,11 +32,12 @@ public class Test_01<number> {
             }
         }
     }
-    public static int[] missing_number (int [] a){
-        for( int j = 0; j<a.length; j++) {
-            for (int i = 0; a[j] == a[j] + 1; i++) {
 
-                System.out.println(a[i]);
+    public static int[] missing_number(int[] a) {
+        for (int i = 0; i < a.length - 1; i++) {
+            if (a[i + 1] == a[i] + 1) {
+            } else {
+                System.out.println(a[i] + 1);
             }
         }
         return a;
