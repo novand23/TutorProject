@@ -12,12 +12,10 @@ public class Test_02 {
     public static void main(String[] args) throws IOException {
         BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
         List<Integer> list = new ArrayList<>();
-        System.out.println("Enter number: ");
-        list.add(Integer.parseInt(bf.readLine()));
-        for (int i = 0; i < list.size(); i++) {
+        while (true) {
             System.out.println("Enter number: ");
+            if (list.add()) break;
             list.add(Integer.parseInt(bf.readLine()));
-
         }
     }
 }
