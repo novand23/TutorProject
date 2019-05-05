@@ -14,8 +14,9 @@ public class Test_02 {
         List<Integer> list = new ArrayList<>();
         while (true) {
             System.out.println("Enter number: ");
-            if (list.add()) break;
-            list.add(Integer.parseInt(bf.readLine()));
+            String a = bf.readLine();
+            if (a.isEmpty()) break;
+            list.add(Integer.parseInt(a));
         }
     }
 }
