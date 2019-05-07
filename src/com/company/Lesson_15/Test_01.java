@@ -25,11 +25,18 @@ public class Test_01 {
             list.add(Integer.parseInt(bf.readLine()));
         }
         for (int i = 0; i < list.size(); i++) {
-            if (list.get(i) % 3 == 0) {
+            if (list.get(i) % 3 == 0 & list.get(i) % 2 == 0) {
                 list1.add(list.get(i));
-            } else if (list.get(i) % 2 == 0) {
                 list2.add(list.get(i));
-            } else if (list.get(i) % 3 != 0 & list.get(i) % 2 != 0) {
+            } else if (list.get(i) % 3 == 0) {
+                list1.add(list.get(i));
+            }
+
+            if (list.get(i) % 2 == 0) {
+                list2.add(list.get(i));
+            }
+
+            if (list.get(i) % 3 != 0 & list.get(i) % 2 != 0) {
                 list3.add(list.get(i));
             }
 
