@@ -20,7 +20,8 @@ public class Test_01 {
         List<Integer> list1 = new ArrayList<>();
         List<Integer> list2 = new ArrayList<>();
         List<Integer> list3 = new ArrayList<>();
-        for (int i =0; i<8; i++) {
+        for (int i = 0; i < 8; i++) {
+            System.out.println("Enter number: ");
             list.add(Integer.parseInt(bf.readLine()));
         }
         for (int i = 0; i < list.size(); i++) {
