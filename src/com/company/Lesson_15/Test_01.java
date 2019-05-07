@@ -27,21 +27,16 @@ public class Test_01 {
         for (int i = 0; i < list.size(); i++) {
             if (list.get(i) % 3 == 0) {
                 list1.add(i);
-            }
-        }
-        for (int i = 0; i < list.size(); i++) {
-            if (list.get(i) % 2 == 0) {
+            } else if (list.get(i) % 2 == 0) {
                 list2.add(i);
-            }
-        }
-        for (int i = 0; i < list.size(); i++) {
-            if (list.get(i) % 3 != 0 & list.get(i) % 2 != 0) {
+            } else if (list.get(i) % 3 != 0 & list.get(i) % 2 != 0) {
                 list3.add(i);
             }
+
         }
-        System.out.println(printList(list1));
-        System.out.println(printList(list2));
-        System.out.println(printList(list3));
+        printList(list1);
+        printList(list2);
+        printList(list3);
     }
 
     private static List<Integer> printList(List a) {
