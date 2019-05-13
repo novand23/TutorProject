@@ -8,27 +8,25 @@ import java.util.List;
 
 /*
 1. Создай список строк.
-2. Считай с клавиатуры 5 строк и добавь в список.
-3. Используя цикл, найди самую длинную строку в списке.
-4. Выведи найденную строку на экран.
-5. Если таких строк несколько, выведи каждую с новой строки.
+2. Добавь в него 5 строчек с клавиатуры.
+3. Удали последнюю строку и вставь её в начало. Повторить 13 раз.
+4. Используя цикл выведи содержимое на экран, каждое значение с новой строки.
 */
-public class HW_14_04 {
+public class HW_14_05 {
     public static void main(String[] args) throws IOException {
         BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
         List<String> list = new ArrayList<>();
-        int a = 0;
         for (int i = 0; i < 5; i++) {
             System.out.println("Enter text: ");
             list.add(bf.readLine());
-            if (list.get(i).length() > a) {
-                a = list.get(i).length();
-            }
+        }
+        for (int i = 0; i < 13; i++) {
+            String a = list.get(list.size()-1);
+            list.remove(list.size()-1);
+            list.add(0, a);
         }
         for (int i = 0; i < list.size(); i++) {
-            if (list.get(i).length() == a) {
-                System.out.println(list.get(i));
-            }
+            System.out.println(list.get(i));
         }
     }
 }
