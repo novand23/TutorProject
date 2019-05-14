@@ -28,15 +28,21 @@ public class Test_01 {
             if (a.isEmpty()) break;
             list.add(a);
         }
+        List<String> list1 = doubleValues(list);
+        for (int i = 0; i < list1.size(); i++) {
+            System.out.println(list1.get(i));
+        }
+
     }
+
     private static List<String> doubleValues(List<String> a) {
         List<String> list1 = new ArrayList<>();
         for (int i = 0; i < a.size(); i++) {
-            if (a.get(i).length() ) {
-
+            if (a.get(i).length() % 2 == 0) {
+                list1.add(a.get(i) + " " + a.get(i));
             }
         }
-        }
         return list1;
+    }
 
 }
