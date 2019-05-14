@@ -35,8 +35,10 @@ public class Test_02 {
             Cat cat = new Cat(name,age,weight,tail);
             listcats.add(cat.toString());
         }
+        for (int i = 0; i < listcats.size(); i++) {
+            System.out.println(listcats.get(i));
 
-
+        }
     }
 }
 
@@ -86,6 +88,6 @@ class Cat {
     }
 
     public String toString() {
-        return String.format("\nCat name is %s, age is %d, weight is %d, tail is %d", getName(), getAge(), getWeight(), getTail());
+        return String.format("Cat name is %s, age is %d, weight is %f, tail is %f", getName(), getAge(), getWeight(), getTail());
     }
 }
