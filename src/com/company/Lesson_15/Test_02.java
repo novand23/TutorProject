@@ -34,7 +34,6 @@ public class Test_02 {
 
         }
         list = fix(list);
-        System.out.println(list);
         for (int i = 0; i < list.size(); i++) {
             System.out.println(list.get(i));
         }
