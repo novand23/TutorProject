@@ -21,6 +21,7 @@ Cat name is Murka, age is 8, weight is 7, tail = 20
 public class Test_02 {
     public static void main(String[] args) throws IOException {
         BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
+        List<String> listcats = new ArrayList<>();
         while (true) {
             System.out.println("Enter name: ");
             String name = bf.readLine();
@@ -31,6 +32,8 @@ public class Test_02 {
             double weight = Double.parseDouble(bf.readLine());
             System.out.println("Enter tail: ");
             double tail = Double.parseDouble(bf.readLine());
+            Cat cat = new Cat(name,age,weight,tail);
+            listcats.add(cat.toString());
         }
 
 
