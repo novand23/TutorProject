@@ -32,6 +32,10 @@ public class Test_01 {
         for (int i = 0; i < list1.size(); i++) {
             System.out.println(list1.get(i));
         }
+        List<String> list2 = triplingValues(list);
+        for (int i = 0; i < list2.size(); i++) {
+            System.out.println(list2.get(i));
+        }
 
     }
 
@@ -44,5 +48,13 @@ public class Test_01 {
         }
         return list1;
     }
-
+    private static List<String> triplingValues(List<String> a) {
+        List<String> list2 = new ArrayList<>();
+        for (int i = 0; i < a.size(); i++) {
+            if (a.get(i).length() % 2 != 0) {
+                list2.add(a.get(i) + " " + a.get(i)+ " " + a.get(i));
+            }
+        }
+        return list2;
+    }
 }
