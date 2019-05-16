@@ -12,7 +12,7 @@ import java.util.Arrays;
 
 public class Test_17_01 {
     public static void main (String[] args) {
-        int[] arr = {8,8,4,4,9};
+        int[] arr = {2,8,4,4,8};
         System.out.println(no_duplicate(arr));
 
 
