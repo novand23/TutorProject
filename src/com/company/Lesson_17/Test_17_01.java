@@ -11,17 +11,16 @@ import java.util.Arrays;
 // 123456789
 
 public class Test_17_01 {
-    private static void main (String[] args) {
-
-        int[] arr = {123456789, 65475264, 836133896, 836133896, 746254373, 1000000000, 542627588, 1000000000, 444088605, 65475264, 746254373, 542627588, 444088605};
-        no_duplicate(arr);
+    public static void main (String[] args) {
+        int[] arr = {8,8,4,4,9};
+        System.out.println(no_duplicate(arr));
 
 
     }
 
     private static int no_duplicate(int[] a) {
         if (a.length == 0) {
-            return 0;
+            return -1;
         }
 
         for(int i = 1; i < a.length; i++) {
@@ -31,12 +30,12 @@ public class Test_17_01 {
                 a[j-1] = t;
             }
         }
-        for (int i = 0; i < a.length; i++) {
+        for (int i = 0; i < a.length; i=+2) {
             if (a[i] != a[i + 1]) {
                 return a[i];
             }
         }
-        return a[0];
+        return -1;
     }
 }
 
