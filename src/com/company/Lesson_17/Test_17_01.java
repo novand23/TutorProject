@@ -12,7 +12,7 @@ import java.util.Arrays;
 
 public class Test_17_01 {
     public static void main (String[] args) {
-        int[] arr = {2,8,4,4,8};
+        int[] arr = {22,86,86,5,5};
         System.out.println(no_duplicate(arr));
 
 
@@ -30,10 +30,10 @@ public class Test_17_01 {
                 a[j-1] = t;
             }
         }
-        for (int i = 0; i < a.length; i=+2) {
+        for (int i = 0; i < a.length-1; i++) {
             if (a[i] != a[i + 1]) {
                 return a[i];
-            }
+            } else  i++;
         }
         return -1;
     }
