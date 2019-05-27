@@ -20,7 +20,7 @@ public class Test_18_01 {
         Date dateS = new Date();
         insert(list);
         Date dateF = new Date();
-        long time = dateS.getTime()-dateF.getTime();
+        long time = dateF.getTime()-dateS.getTime();
         return time;
 
     }
