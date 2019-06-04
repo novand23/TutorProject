@@ -1,11 +1,10 @@
-package com.company.Lesson_09;
+package com.company.Lesson_09_Array;
 
 // Ввести 5 строк с клавиатуры и записать их в массив
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Scanner;
 
 public class Test_05 {
     public static void main(String[] args) throws IOException {

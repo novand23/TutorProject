@@ -20,19 +20,20 @@ public class Test_01 {
         Human gm2 = new Human("Karina", false, 77, null, null);
         Human fother = new Human("Igor", true, 52, gf1, gm1);
         Human mother = new Human("Toma", false, 45, gf2, gm2);
-        Human child = new Human("Roma", true, 22, fother, mother);
-        gf1.setFather(fother);
-        gf2.setFather(fother);
-        gm1.setFather(fother);
-        gm2.setFather(fother);
+        Human child1 = new Human("Roma", true, 22, fother, mother);
+        Human child2 = new Human("Roma", true, 15, fother, mother);
+        Human child3 = new Human("Roma", false, 7, fother, mother);
 
         System.out.println(gf1);
-        System.out.println(gf2);
         System.out.println(gm1);
+        System.out.println(gf2);
         System.out.println(gm2);
         System.out.println(fother);
         System.out.println(mother);
-        System.out.println(child);
+        System.out.println(child1);
+        System.out.println(child2);
+        System.out.println(child3);
+
     }
 }
 
@@ -43,12 +44,7 @@ class Human {
     private Human father;
     private Human mother;
 
-    /*public Human(String name, boolean man, int age) {
-        this.name = name;
-        this.gender = man;
-        this.age = age;
-    }
-*/
+
     public Human(String name, boolean man, int age, Human father, Human mother) {
         this.name = name;
         this.gender = man;
@@ -100,7 +96,19 @@ class Human {
 
 
     public String toString() {
-        return String.format("\nName: %s, gender: %s, age %d, father: %s, mother: %s", getName(), getGender(), getAge(), getFather().getName(), getMather().getName());
+        String text = "";
+        text += "Имя: " + this.name;
+        text += ", пол: " + (this.gender ? "мужской" : "женский");
+        text += ", возраст: " + this.age;
+
+        if (this.father != null)
+            text += ", отец: " + this.father.name;
+
+        if (this.mother != null)
+            text += ", мать: " + this.mother.name;
+
+        return text;
+
     }
 
     

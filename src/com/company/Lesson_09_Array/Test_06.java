@@ -1,4 +1,4 @@
-package com.company.Lesson_09;
+package com.company.Lesson_09_Array;
 
 // Ввести 5 чисел с клавиатуры и записать их в массив
 // Вывести содержимое массива в консоль

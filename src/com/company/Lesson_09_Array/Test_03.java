@@ -1,4 +1,4 @@
-package com.company.Lesson_09;
+package com.company.Lesson_09_Array;
 
 // Заполнение массива из 10 чисел, числами от 10 до 19
 public class Test_03 {
