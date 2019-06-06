@@ -23,7 +23,7 @@ public class Test_20_03 {
         set.add(9);
         set.add(54);
         set.add(90);
-        set.add(3);
+        set.add(8);
         return set;
     }
     private static void removeAllNumbersMoreThan10 (Set<Integer> set){
@@ -32,8 +32,6 @@ public class Test_20_03 {
             int a = it.next();
             if (a>10){
                 it.remove();
-            }else{
-                System.out.println(a);
             }
         }
     }
