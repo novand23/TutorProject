@@ -39,6 +39,7 @@ public class Test_21_03 {
         hashMap.put("Абрамовичи", "Лондон");
         hashMap.put("Кроты", "Москва");
         hashMap.put("Улусы", "Лондон");
+        hashMap.put("Трампы", "Вашингтон");
         return hashMap;
     }
 
