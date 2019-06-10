@@ -34,7 +34,7 @@ public class Test_20_04 {
 
     private static Map<String, String> takemap() {
         Map<String, String> map = new HashMap<>();
-        map.put("Sim1", "Simn");
+        map.put("Simn", "Simn");
         map.put("Simn", "Tomn");
         map.put("Simn", "Arbusn");
         map.put("Baby", "Simn");
