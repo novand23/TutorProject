@@ -9,6 +9,7 @@ package com.company.Lesson_23_Exception_02;
 
 6. Напиши catch, который перехватит все три Exception1, Exception2 и Exception3
 */
+/*
 public class Test_23_01 {
     public static void main (String[]args){
        try {
@@ -39,4 +40,4 @@ public class Test_23_01 {
 
 static class Exception1 extends  Exception{}
 static class Exception2 extends  Exception1{}
-static class Exception3 extends  Exception2{}
+static class Exception3 extends  Exception2{}*/
