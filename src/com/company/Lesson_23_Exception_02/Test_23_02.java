@@ -15,7 +15,7 @@ import java.util.List;
 Числа выводить с новой строки сохраняя порядок ввода.
 */
 public class Test_23_02 {
-    private static void main (String[] args){
+    public static void main (String[] args){
     readData();
     }
 
