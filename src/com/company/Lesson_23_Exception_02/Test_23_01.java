@@ -1,4 +1,5 @@
 package com.company.Lesson_23_Exception_02;
+
 /* Перехватывание исключений
 1. Есть три исключения последовательно унаследованные от Exception:
 2. class Exception1 extends  Exception
@@ -9,19 +10,18 @@ package com.company.Lesson_23_Exception_02;
 
 6. Напиши catch, который перехватит все три Exception1, Exception2 и Exception3
 */
-/*
 public class Test_23_01 {
-    public static void main (String[]args){
-       try {
-           throwingException();
+    public static void main(String[] args) {
+        try {
+            throwingException();
 
-       } catch (Exception e) {
-           System.out.println("e");
-       }
+        } catch (Exception e) {
+            System.out.println("e");
+        }
     }
 
     private static void throwingException() throws Exception {
-        int i = (int) (Math.random()*4);
+        int i = (int) (Math.random() * 4);
 
         if (i == 0) {
             throw new Exception();
@@ -34,10 +34,16 @@ public class Test_23_01 {
         }
         if (i == 3) {
             throw new Exception3();
+        }
+    }
+
+
+    static class Exception1 extends Exception {
+    }
+
+    static class Exception2 extends Exception1 {
+    }
+
+    static class Exception3 extends Exception2 {
     }
 }
-
-
-static class Exception1 extends  Exception{}
-static class Exception2 extends  Exception1{}
-static class Exception3 extends  Exception2{}*/
