@@ -15,6 +15,7 @@ public class Test_25_02_WordSorting {
         }
     }
 
+
     private static void sort (String[] s) {
 
     }
