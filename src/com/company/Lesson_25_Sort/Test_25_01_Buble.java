@@ -9,18 +9,28 @@ import java.util.List;
 /* Ввести с клавиатуры 5 чисел и отсортировать их бабл сортом.
  */
 public class Test_25_01_Buble {
-    private static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException {
         BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
-        List<Integer> list = new ArrayList<>();
-        list.add(Integer.parseInt(bf.readLine()));
-        for (int i = list.size() - 1; i > 0; i--) {
+        int[] arr = new int[5];
+
+        for (int i = 0; i < arr.length; i++) {
+            System.out.println("Введите число: ");
+            arr[i] = Integer.parseInt(bf.readLine());
+        }
+        bubbleSort(arr);
+        for (int i = 0; i<arr.length; i++){
+            System.out.println(arr[i]);
+        }
+    }
+
+    private static void bubbleSort(int[] arr) {
+        for (int i = arr.length - 1; i > 0; i--) {
             for (int j = 0; j < i; j++) {
-                if (list.get(j) > list.get(j + 1)) {
-                    int a = list.get(j);
-                    list.get(j) = list.get(j + 1);
-                    list.get(j+1) = a;
 
-
+                if (arr[j] > arr[j + 1]) {
+                    int tmp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = tmp;
                 }
             }
         }
