@@ -20,6 +20,7 @@ public class Test_25_01_Buble {
                     list.get(j) = list.get(j + 1);
                     list.get(j+1) = a;
 
+
                 }
             }
         }
