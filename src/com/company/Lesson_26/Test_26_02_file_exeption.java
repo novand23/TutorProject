@@ -19,8 +19,7 @@ public class Test_26_02_file_exeption {
             try {
                 System.out.println("Введите имя файла: ");
                 String fileName1 = bf.readLine();
-                InputStream inputStream1 = new FileInputStream(fileName1);
-                inputStream = inputStream1;
+                inputStream = new FileInputStream(fileName1);
 
                 break;
 
