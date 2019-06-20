@@ -13,24 +13,15 @@ public class Test_26_02_file_exeption {
     public static void main(String[] args) throws IOException {
         BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
 
+        InputStream inputStream = null;
+
         while (true) {
             try {
                 System.out.println("Введите имя файла: ");
                 String fileName1 = bf.readLine();
-                InputStream inputStream = new FileInputStream(fileName1);
-                String fileName2 = bf.readLine();
-                OutputStream outputStream = new FileOutputStream(fileName2);
-                int count = 0;
-                while (inputStream.available()>0){
-                    int data = inputStream.read();
-                    outputStream.write(data);
-                    count++;
+                InputStream inputStream1 = new FileInputStream(fileName1);
+                inputStream = inputStream1;
 
-                }
-                System.out.println(count);
-
-                inputStream.close();
-                outputStream.close();
                 break;
 
             } catch (FileNotFoundException e) {
@@ -39,6 +30,18 @@ public class Test_26_02_file_exeption {
             }
 
         }
+        String fileName2 = bf.readLine();
+        OutputStream outputStream = new FileOutputStream(fileName2);
+        int count = 0;
+        while (inputStream.available()>0){
+            int data = inputStream.read();
+            outputStream.write(data);
+            count++;
+        }
+        System.out.println(count);
+
+        inputStream.close();
+        outputStream.close();
 
 
 
