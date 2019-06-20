@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /* Одинаковые слова в списке
@@ -18,16 +19,21 @@ public class Test_26_01_Map {
     public static void main(String[] args) {
     }
 
-    private static ArrayList arrayList() throws IOException {
+    private static List arrayList() throws IOException {
         BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
         ArrayList<String> words = new ArrayList<String>();
-        for (int i = 0; i < 20; i++) {
+        for (int i = 0; i < 5; i++) {
             words.add(bf.readLine());
 
         }
         return words;
     }
-    private static Map<String, Integer> count (ArrayList<String> list){
+    private static Map<String, Integer> count (List<String> list){
+        Map<String,Integer> map = new HashMap<>();
+        for (Map.Entry<String, Integer> map1: map.entrySet()){
+
+        }
+
 
     }
 }
