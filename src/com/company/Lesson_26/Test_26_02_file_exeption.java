@@ -13,14 +13,17 @@ public class Test_26_02_file_exeption {
     public static void main(String[] args) throws IOException {
         BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
 
-        String fileName1 = bf.readLine();
         String fileName2 = bf.readLine();
-        try {
-            InputStream inputStream = new FileInputStream(fileName1);
-        } catch (FileNotFoundException e) {
-            System.out.println("Файл не существует!");
-            System.out.println("Проверьте правильность написания имени файла и напишите повторно: ");
-            InputStream inputStream = new FileInputStream(fileName1);
+
+        while (true) {
+            try {
+                String fileName1 = bf.readLine();
+                InputStream inputStream = new FileInputStream(fileName1);
+                if ()
+            } catch (FileNotFoundException e) {
+                System.out.println("Файл не существует!");
+                System.out.println("Проверьте правильность написания имени файла и напишите повторно: ");
+            }
         }
         OutputStream outputStream = new FileOutputStream(fileName2);
 
