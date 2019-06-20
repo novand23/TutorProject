@@ -1,9 +1,13 @@
+/*
 package com.company.Lesson_25_Sort;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+import static jdk.nashorn.internal.runtime.JSType.isNumber;
+
+*/
 /* Задача по алгоритмам
 Задача: Пользователь вводит с клавиатуры список слов (и чисел). Слова вывести в возрастающем порядке, числа - в убывающем.
 Пример ввода:
@@ -24,7 +28,8 @@ import java.io.InputStreamReader;
 1
 0
 Яблоко
-*/
+*//*
+
 public class Test_25_03 {
     public static void main(String[] args) {
 
@@ -41,29 +46,32 @@ public class Test_25_03 {
     }
 
     private static void sort(String[] arr) {
-        for () {
-            if () {
-                for () {
+        String [] newarr = arr;
+        int a = 0;
+        int a1 = 0;
+        for (int i = 0; i < arr.length; i++) {
+            if (isNumber(arr[i])) {
+                a++;
+                for (int j = 0; j<arr.length; i++) {
+                    if () {
+                        if () {
+                        }
+                    }
+                }
+
+            } else {
+                for (int k = 0; k<arr.length; k++) {
                     if () {
                         if () {
 
-                        } else {
-                            for () {
-                                if () {
-                                    if () {
-
-                                    }
-                                }
-                            }
                         }
-
                     }
                 }
+
             }
         }
-
-
     }
+
 
     private static boolean isNumber(String a) {
         try {
@@ -79,3 +87,4 @@ public class Test_25_03 {
     }
 
 }
+*/
