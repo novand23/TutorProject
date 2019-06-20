@@ -25,6 +25,7 @@ public class Test_26_02_file_exeption {
                     int data = inputStream.read();
                     outputStream.write(data);
                     count++;
+
                 }
                 System.out.println(count);
 
