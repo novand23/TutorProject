@@ -15,7 +15,7 @@ import java.util.*;
 public class Test_26_01_Map {
     public static void main(String[] args) throws IOException {
 
-        System.out.println(list());
+
     }
 
     private static List list() throws IOException {
@@ -27,14 +27,19 @@ public class Test_26_01_Map {
         }
         return words;
     }
-    private static Map<String, Integer> count (List<String> list){
-        int a = 0;
-        Map<String,Integer> map = new HashMap<>();
-        Iterator<Map.Entry<String, Integer>> iterator = map.entrySet().iterator();
+
+    private static Map<String, Integer> count(List<String> list) {
+        Map<String, Integer> map = new HashMap<>();
+        for (String word : list) {
+            if (map.containsKey(word)) {
+                map.put(word, map.get(word) + 1);
+            } else {
+                map.put(word, 1);
+            }
 
 
         }
 
-
+        return map;
     }
 }
