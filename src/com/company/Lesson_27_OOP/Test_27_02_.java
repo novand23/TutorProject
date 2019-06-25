@@ -11,6 +11,12 @@ package com.company.Lesson_27_OOP;
 Подумать, какие значения присваивать переменным определенного класса.
 */
 public class Test_27_02_ {
+    public static void main (String[]args) {
+        Horse horse = new Horse("Lola", false, true);
+        Horse pegas = new Pegas("Rembo", true, false);
+        System.out.println(horse.toString());
+        System.out.println(pegas.toString());
+    }
 }
 class Horse{
     private String name;
@@ -29,9 +35,31 @@ class Horse{
     public void setName(String name){
         this.name = name;
     }
-    public boolean getF
+    public boolean isFlyable (){
+        return flyable;
+    }
+    public void setFlyable(boolean flyable){
+        this.flyable = flyable;
+    }
+    public boolean isRunnable (){
+        return runnable;
+    }
+    public void setRunnable (boolean runnable){
+        this.runnable = runnable;
+    }
 
+    public String toString(){
+        String text = "";
+        text += "My name is " + this.name + ", " + (this.flyable ? "i can fly =)" : "i cant fly =(");
+        return text;
+
+    }
 }
-class Pegas{
+class Pegas extends Horse{
+    public Pegas (String name, boolean flyable, boolean runnable) {
+        super(name, flyable, runnable);
+
+    }
+
 
 }
