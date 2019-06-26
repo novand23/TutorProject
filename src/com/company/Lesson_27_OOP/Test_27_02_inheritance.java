@@ -10,7 +10,7 @@ package com.company.Lesson_27_OOP;
 В методе main создать два объекта: horse и pegas
 Подумать, какие значения присваивать переменным определенного класса.
 */
-public class Test_27_02_ {
+public class Test_27_02_inheritance {
     public static void main (String[]args) {
         Horse horse = new Horse("Lola", false, true);
         Horse pegas = new Pegas("Rembo", true, false);
