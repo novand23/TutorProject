@@ -11,9 +11,7 @@ public class Test_27_04_Cat_Dog {
     public static void main(String[] args) {
         Cat cat = new Cat("Ron", 15);
         Dog dog = new Dog("Greg", 26);
-
     }
-
 
     public static class Cat {
         private String name;
