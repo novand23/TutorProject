@@ -6,33 +6,29 @@ package com.company.Lesson_28_OOP;
 */
 
 public class Test_28_01 {
-    public static void main (String[]args){
+    public static void main(String[] args) {
 
     }
 }
 
 class Pet {
-
-
-    public Pet getChild (){
+    public Pet getChild() {
         Pet pet1 = new Pet();
         return pet1;
     }
 }
 
-class Cat extends Pet{
-
+class Cat extends Pet {
     @Override
-    public Pet getChild() {
+    public Cat getChild() {
         Cat cat1 = new Cat();
         return cat1;
     }
 }
 
-class Dog extends Pet{
-
+class Dog extends Pet {
     @Override
-    public Pet getChild() {
+    public Dog getChild() {
         Dog dog1 = new Dog();
         return dog1;
     }
