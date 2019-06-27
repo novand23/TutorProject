@@ -33,7 +33,7 @@ class Dog extends Pet{
 
     @Override
     public Pet getChild() {
-        Cat dog1 = new Cat();
+        Dog dog1 = new Dog();
         return dog1;
     }
 }
