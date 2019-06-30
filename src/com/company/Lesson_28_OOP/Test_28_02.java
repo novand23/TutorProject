@@ -4,44 +4,32 @@ package com.company.Lesson_28_OOP;
 Написать метод, который определяет, объект какого класса ему передали, и возвращает результат – одно значение из: «Кошка», «Птица», «Лампа», «Собака».
 */
 public class Test_28_02 {
-    public static void main (String[] args){
-
-
+    public static void main(String[] args) {
+    method(new Bird());
     }
+
     private static void method (Object o){
         if (o instanceof Cat1){
-
+            System.out.println("Кошка");
+        } else if (o instanceof Bird){
+            System.out.println("Птица");
+        } else if (o instanceof Lamp){
+            System.out.println("Лампа");
+        } else if (o instanceof Dog1){
+            System.out.println("Собака");
         }
     }
 }
-class Animal{
 
-    public String Animal (){
-        return "Животное";
-    }
-}
-class Cat1 extends Animal {
+class Cat1{
 
-    @Override
-    public String Animal() {
-        return "Кошка";
-    }
 }
-class Dog1 extends Animal{
+class Bird{
 
-    @Override
-    public String Animal() {
-        return "Собака";
-    }
-}
-class Bird extends Animal{
-    @Override
-    public String Animal() {
-        return "Птица";
-    }
 }
 class Lamp{
-    public String Animal (){
-        return "Лампа";
-    }
+
+}
+class Dog1{
+
 }
