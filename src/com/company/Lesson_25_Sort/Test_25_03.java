@@ -1,13 +1,9 @@
-/*
 package com.company.Lesson_25_Sort;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-import static jdk.nashorn.internal.runtime.JSType.isNumber;
-
-*/
 /* Задача по алгоритмам
 Задача: Пользователь вводит с клавиатуры список слов (и чисел). Слова вывести в возрастающем порядке, числа - в убывающем.
 Пример ввода:
@@ -28,16 +24,18 @@ import static jdk.nashorn.internal.runtime.JSType.isNumber;
 1
 0
 Яблоко
-*//*
-
+*/
 public class Test_25_03 {
-    public static void main(String[] args) {
-
+    public static void main(String[] args) throws IOException {
+        String[] arr = sort(array());
+        for (int i = 0; i < arr.length; i++) {
+            System.out.println(arr[i]);
+        }
     }
 
     private static String[] array() throws IOException {
         BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
-        String[] arr = new String[10];
+        String[] arr = new String[7];
         for (int i = 0; i < arr.length; i++) {
             System.out.println("Введите слово или цифру : ");
             arr[i] = bf.readLine();
@@ -45,31 +43,36 @@ public class Test_25_03 {
         return arr;
     }
 
-    private static void sort(String[] arr) {
-        String [] newarr = arr;
-        int a = 0;
-        int a1 = 0;
+    private static String[] sort(String[] arr) {
+
         for (int i = 0; i < arr.length; i++) {
             if (isNumber(arr[i])) {
-                a++;
-                for (int j = 0; j<arr.length; i++) {
-                    if () {
-                        if () {
+                for (int j = 0; j < arr.length; j++) {
+                    if (isNumber(arr[j])) {
+                        if (Integer.parseInt(arr[j]) < Integer.parseInt(arr[i])) {
+                            String k = arr[j];
+                            arr[j] = arr[i];
+                            arr[i] = k;
                         }
                     }
                 }
 
             } else {
-                for (int k = 0; k<arr.length; k++) {
-                    if () {
-                        if () {
-
+                for (int k = 0; k < arr.length; k++) {
+                    if (!isNumber(arr[k])) {
+                        if (isGreaterThen(arr[i], arr[k])) {
+                            String w = arr[k];
+                            arr[k] = arr[i];
+                            arr[i] = w;
                         }
                     }
                 }
-
             }
+
         }
+
+
+        return arr;
     }
 
 
@@ -83,9 +86,7 @@ public class Test_25_03 {
     }
 
     private static boolean isGreaterThen(String a, String b) {
-        return a.compareTo(b) > 0;
+        return a.compareTo(b) < 0;
     }
 
 }
-*/
-//TODO
