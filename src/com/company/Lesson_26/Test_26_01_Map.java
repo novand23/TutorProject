@@ -14,36 +14,42 @@ import java.util.*;
 */
 public class Test_26_01_Map {
     public static void main(String[] args) throws IOException {
-        System.out.println(count(list()));
+        Map<String, Integer> map = new_map(list());
+        Iterator<Map.Entry<String, Integer>> iterator = map.entrySet().iterator();
+        while (iterator.hasNext()) {
+            Map.Entry<String, Integer> text = iterator.next();
+            System.out.println(text.getKey() + " - " + text.getValue());
+        }
+
 
     }
 
     private static List list() throws IOException {
         BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
-        ArrayList<String> words = new ArrayList<String>();
+        ArrayList<String> words = new ArrayList<>();
         for (int i = 0; i < 5; i++) {
+            System.out.println("Введите строку: ");
             words.add(bf.readLine());
 
         }
         return words;
     }
 
-    private static int count(List<String> list) {
+    private static Map<String, Integer> new_map(List<String> list) {
         Map<String, Integer> map = new HashMap<>();
-        /*Iterator<Map.Entry<String,Integer>> iterator = map.entrySet().iterator();*/
-        int a = 0;
         for (int i = 0; i < list.size(); i++) {
-            for (int j = 1; j < list.size() ;) {
+            int count = 0;
+            for (int j = 0; j < list.size(); ) {
                 if (list.get(i).equals(list.get(j))) {
-                    a++;
-
+                    count++;
+                    map.put(list.get(i), count);
                     j++;
                 } else {
                     j++;
                 }
             }
         }
-        return a;
+        return map;
     }
 }
-//TODO
+
