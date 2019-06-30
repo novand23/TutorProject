@@ -8,6 +8,7 @@ public class HW_28_04 {
         mathod(new UnknownAnimal());
     }
 
+
     private static void mathod(Object o) {
         if (o instanceof Cow) {
             System.out.println("Корова");
