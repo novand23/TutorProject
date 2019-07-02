@@ -10,8 +10,8 @@ package com.company.Lesson_29_OOP_Interface;
 */
 public class Test_29_03 {
     public static void main (String[] args){
-        System.out.println(new Matrix().user1.toString());
-        System.out.println(new Matrix().user2.toString());
+        System.out.println(Matrix.user1.toString());
+        System.out.println(Matrix.user2.toString());
     }
 }
 
@@ -38,6 +38,6 @@ class User implements DBObject{
 }
 
 class Matrix{
-    User user1 = new User().initializeIdAndName(12215, "Jon");
-    User user2 = new User().initializeIdAndName(78954,"Derek");
+    static User user1 = new User().initializeIdAndName(12215, "Jon");
+    static User user2 = new User().initializeIdAndName(78954,"Derek");
  }
