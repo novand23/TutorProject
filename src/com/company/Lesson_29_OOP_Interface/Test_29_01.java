@@ -8,24 +8,34 @@ package com.company.Lesson_29_OOP_Interface;
 */
 public class Test_29_01 {
     public static void main (String [] args){
-
+        AlcoholicBeer al = new AlcoholicBeer();
+        al.toString();
     }
 }
 
 interface Drink{
 
-    static boolean isAlcoholic(){
-        int a = (int) (Math.random()*2);
-        if (a == 0){
-            return true;
-        } else {
-            return false;
-        }
-    }
+    public boolean isAlcoholic();
+
+
 }
 
 class AlcoholicBeer implements Drink {
 
+    @Override
+    public boolean isAlcoholic() {
+        return true;
+    }
 
 
+    public String toString() {
+        String s;
+        if (isAlcoholic()){
+            s =  "Напиток алкогольный";
+
+        } else {
+            s = "Напиток безалкогольный";
+        }
+        return s;
+    }
 }
