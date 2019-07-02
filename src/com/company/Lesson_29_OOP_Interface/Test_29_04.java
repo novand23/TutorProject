@@ -11,18 +11,18 @@ package com.company.Lesson_29_OOP_Interface;
 7. Подумай, что должен возвращать метод getLanguage.
 8. Программа должна выводить на экран "Я переводчик с немецкого".
 */
-public interface Test_29_04 {
+public class Test_29_04 {
+    public static void main (String[]args){
+
+    }
 }
 
 abstract class Translator{
-    public getLanguage(){
+    abstract void getLanguage(){
 
     }
+
     public String translate(){
-        String s = "Я переводчик с ";
-        return s + getLanguage();
-    }
-}
-class EnglishTranslator extends Translator{
 
+    }
 }
