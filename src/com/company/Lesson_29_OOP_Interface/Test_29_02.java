@@ -8,14 +8,18 @@ package com.company.Lesson_29_OOP_Interface;
 */
 public class Test_29_02 {
     public static void main (String[]args){
+        Drink1 drink = new Cola();
+        Drink1 drink1 = new Beer();
 
+        mathod(drink);
+        mathod(drink1);
     }
 
     public static void mathod (Drink1 drink) {
-        if (drink.isAlcoholic() == true){
-            System.out.println("Алкогольный");
+        if (drink.isAlcoholic()){
+            System.out.println("Алкогольный напиток");
         } else {
-            System.out.println("Безалкогольный");
+            System.out.println("Безалкогольный напиток");
         }
     }
 }
