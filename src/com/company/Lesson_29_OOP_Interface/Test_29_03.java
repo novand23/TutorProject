@@ -9,6 +9,10 @@ package com.company.Lesson_29_OOP_Interface;
 6. В методе main вывести на экран объекты.
 */
 public class Test_29_03 {
+    public static void main (String[] args){
+        System.out.println(new Matrix().user1.toString());
+        System.out.println(new Matrix().user2.toString());
+    }
 }
 
 interface DBObject {
@@ -28,8 +32,8 @@ class User implements DBObject{
        return this;
     }
 
-    public String toSring(){
-        return String.format("User has name %s, id = %d");
+    public String toString(){
+        return String.format("User has name %s, id = %d", name, id);
     }
 }
 
