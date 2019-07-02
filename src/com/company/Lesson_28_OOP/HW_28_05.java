@@ -26,3 +26,4 @@ class Cat2 extends Pet1{
         System.out.println("Я - кот");
     }
 }
+//TODO
