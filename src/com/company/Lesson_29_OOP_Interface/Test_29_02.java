@@ -17,9 +17,9 @@ public class Test_29_02 {
 
     public static void mathod (Drink1 drink) {
         if (drink.isAlcoholic()){
-            System.out.println("Алкогольный напиток");
+            System.out.println(drink.getClass().getSimpleName() +" - Алкогольный напиток");
         } else {
-            System.out.println("Безалкогольный напиток");
+            System.out.println(drink.getClass().getSimpleName() +" - Безалкогольный напиток");
         }
     }
 }
