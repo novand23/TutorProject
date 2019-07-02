@@ -18,11 +18,10 @@ public class Test_29_04 {
 }
 
 abstract class Translator{
-    abstract void getLanguage(){
-
-    }
+    public abstract String getLanguage();
 
     public String translate(){
+        return  "Я переводчик с " + getLanguage();
 
     }
 }
