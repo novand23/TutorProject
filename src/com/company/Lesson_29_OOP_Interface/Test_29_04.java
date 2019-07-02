@@ -1,4 +1,5 @@
 package com.company.Lesson_29_OOP_Interface;
+
 /*
 1. Создать класс EnglishTranslator, который наследуется от абстрактного класса Translator.
    В классе Translator создать абстрактный метод getLanguage() и не абстрактный метод
@@ -12,16 +13,43 @@ package com.company.Lesson_29_OOP_Interface;
 8. Программа должна выводить на экран "Я переводчик с немецкого".
 */
 public class Test_29_04 {
-    public static void main (String[]args){
+    public static void main(String[] args) {
+        System.out.println(new EnglishTranslator().translate());
+        System.out.println(new GermanyTranslator().translate());
+    }
+}
+
+abstract class Translator {
+    public abstract String getLanguage();
+
+    public String translate() {
+        return "Я переводчик с " + getLanguage();
 
     }
 }
 
-abstract class Translator{
-    public abstract String getLanguage();
+class EnglishTranslator extends Translator {
 
-    public String translate(){
-        return  "Я переводчик с " + getLanguage();
+    @Override
+    public String getLanguage() {
+        return "английского";
+    }
 
+    @Override
+    public String translate() {
+        return super.translate();
+    }
+}
+
+class GermanyTranslator extends Translator {
+
+    @Override
+    public String getLanguage() {
+        return "немецкого";
+    }
+
+    @Override
+    public String translate() {
+        return super.translate();
     }
 }
