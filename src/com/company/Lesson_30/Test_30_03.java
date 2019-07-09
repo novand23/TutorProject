@@ -67,12 +67,11 @@ class Person implements RepkaItem {
     }
 }
 
-
 class RepkaStory {
     public static void tell(List<Person> plot1) {
         for (int i = 0; i < plot1.size()-1; i++) {
-            Person person = plot1.get(i);
-            person.pull(new Person(plot1.get(i + 1).getName(), plot1.get(i).getNamePadezh()));
+            Person person = plot1.get(i).pull();
+
         }
 
     }
