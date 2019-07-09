@@ -63,14 +63,15 @@ class Person implements RepkaItem {
     }
 
     public void pull(Person person) {
-        System.out.println(person.getName() + " за " + person.getNamePadezh());
+        System.out.println(this.getName() + " за " + person.getNamePadezh());
     }
 }
 
 class RepkaStory {
     public static void tell(List<Person> plot1) {
         for (int i = 0; i < plot1.size()-1; i++) {
-            Person person = plot1.get(i).pull();
+            Person person = plot1.get(i);
+            person.pull(plot1.get(i+1));
 
         }
 
