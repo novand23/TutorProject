@@ -38,8 +38,8 @@ interface RepkaItem {
 }
 
 class Person implements RepkaItem {
-     String name;
-     String namePadezh;
+    String name;
+    String namePadezh;
 
     public Person(String name, String namePadezh) {
         this.name = name;
@@ -69,10 +69,9 @@ class Person implements RepkaItem {
 
 class RepkaStory {
     public static void tell(List<Person> plot1) {
-        for (int i = 0; i < plot1.size()-1; i++) {
-            Person person = plot1.get(i+1);
-            person.pull(plot1.get(i));
-
+        for (int i = plot1.size()-1; i >= 0; i--) {
+            Person person = plot1.get(i);
+            person.pull(plot1.get(i - 1));
         }
 
     }
