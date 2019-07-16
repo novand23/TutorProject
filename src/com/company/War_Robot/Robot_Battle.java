@@ -26,10 +26,14 @@ class Robot {
 
 class BodyPart {
     String bodyPart;
-    private BodyPart arm = new BodyPart();
-    private BodyPart leg = new BodyPart();
-    private BodyPart head = new BodyPart();
-    private BodyPart chest = new BodyPart();
+    private BodyPart arm = new BodyPart("Рука");
+    private BodyPart leg = new BodyPart("Нога");
+    private BodyPart head = new BodyPart("Голова");
+    private BodyPart chest = new BodyPart("Грудь");
+
+    public BodyPart(String bodyPart) {
+        this.bodyPart = bodyPart;
+    }
 
 
 }
@@ -49,10 +53,31 @@ abstract class AbstractRobot implements Attackable, Defensable {
     private String name;
     private static int hitCount;
 
+    public AbstractRobot(String name){
+        this.name = name;
+
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public static int getHitCount() {
+        return hitCount;
+    }
+
+    public static void setHitCount(int hitCount) {
+        AbstractRobot.hitCount = hitCount;
+    }
+
     @Override
     public BodyPart attack() {
-        int hitCount = (int) (Math.random()*4);
-        return hitCount;
+
+
     }
 
     @Override
