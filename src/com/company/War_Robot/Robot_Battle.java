@@ -53,7 +53,7 @@ abstract class AbstractRobot implements Attackable, Defensable {
     private String name;
     private static int hitCount;
 
-    public AbstractRobot(String name){
+    public AbstractRobot(String name) {
         this.name = name;
 
     }
@@ -76,7 +76,7 @@ abstract class AbstractRobot implements Attackable, Defensable {
 
     @Override
     public BodyPart attack() {
-
+        return null;
 
     }
 
