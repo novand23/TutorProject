@@ -16,26 +16,42 @@ package com.company.War_Robot;
 */
 public class Robot_Battle {
     public static void main(String[] args) {
+        Robot r1 = new Robot("Ураган");
+        Robot r2 = new Robot("Сатурн");
+
+        doMove(r1, r2);
+        doMove(r2, r1);
+        doMove(r1, r2);
+        doMove(r2, r1);
+        doMove(r1, r2);
+        doMove(r2, r1);
 
     }
-}
 
-class Robot {
+    public static void doMove (AbstractRobot robotFirst, AbstractRobot robotSecond){
+        BodyPart att = robotFirst.attack();
+        BodyPart def = robotSecond.defense();
+        System.out.println(String.format("%s атаковал робота %s, атакована %s, защищена %s",
+                robotFirst.getName(), robotSecond.getName(), att, def));
+    }
 
 }
 
 class BodyPart {
     String bodyPart;
-    private BodyPart arm = new BodyPart("Рука");
-    private BodyPart leg = new BodyPart("Нога");
-    private BodyPart head = new BodyPart("Голова");
-    private BodyPart chest = new BodyPart("Грудь");
+    final static BodyPart arm = new BodyPart("Рука");
+    final static BodyPart leg = new BodyPart("Нога");
+    final static BodyPart head = new BodyPart("Голова");
+    final static BodyPart chest = new BodyPart("Грудь");
 
     public BodyPart(String bodyPart) {
         this.bodyPart = bodyPart;
     }
 
-
+    @Override
+    public String toString() {
+        return this.bodyPart;
+    }
 }
 
 interface Attackable {
@@ -76,12 +92,40 @@ abstract class AbstractRobot implements Attackable, Defensable {
 
     @Override
     public BodyPart attack() {
-        return null;
-
+        BodyPart attackedBodyPart = null;
+        hitCount = (int) (Math.random() * 4);
+        if (hitCount == 0) {
+            attackedBodyPart = BodyPart.arm;
+        } else if (hitCount == 1) {
+            attackedBodyPart = BodyPart.leg;
+        } else if (hitCount == 2) {
+            attackedBodyPart = BodyPart.head;
+        } else if (hitCount == 3) {
+            attackedBodyPart = BodyPart.chest;
+        }
+        return attackedBodyPart;
     }
 
     @Override
     public BodyPart defense() {
-        return null;
+        BodyPart defenseBodyPart = null;
+        hitCount = (int) (Math.random() * 4);
+        if (hitCount == 0) {
+            defenseBodyPart = BodyPart.arm;
+        } else if (hitCount == 1) {
+            defenseBodyPart = BodyPart.leg;
+        } else if (hitCount == 2) {
+            defenseBodyPart = BodyPart.head;
+        } else if (hitCount == 3) {
+            defenseBodyPart = BodyPart.chest;
+        }
+        return defenseBodyPart;
+    }
+
+}
+class Robot extends AbstractRobot {
+
+    public Robot(String name) {
+        super(name);
     }
 }
