@@ -16,7 +16,7 @@ package com.company.War_Robot;
 */
 public class Robot_Battle {
     public static void main(String[] args) {
-        Robot r1 = new Robot("Ураган");
+        Robot r1 = new Robot("Юпитер");
         Robot r2 = new Robot("Сатурн");
 
         doMove(r1, r2);
@@ -25,107 +25,143 @@ public class Robot_Battle {
         doMove(r2, r1);
         doMove(r1, r2);
         doMove(r2, r1);
-
     }
 
-    public static void doMove (AbstractRobot robotFirst, AbstractRobot robotSecond){
+    public static void doMove(AbstractRobot robotFirst, AbstractRobot robotSecond) {
         BodyPart att = robotFirst.attack();
         BodyPart def = robotSecond.defense();
-        System.out.println(String.format("%s атаковал робота %s, атакована %s, защищена %s",
-                robotFirst.getName(), robotSecond.getName(), att, def));
-    }
+        int damage = robotFirst.damage(att);
+        int a = robotSecond.getHp(damage);
 
-}
-
-class BodyPart {
-    String bodyPart;
-    final static BodyPart arm = new BodyPart("Рука");
-    final static BodyPart leg = new BodyPart("Нога");
-    final static BodyPart head = new BodyPart("Голова");
-    final static BodyPart chest = new BodyPart("Грудь");
-
-    public BodyPart(String bodyPart) {
-        this.bodyPart = bodyPart;
-    }
-
-    @Override
-    public String toString() {
-        return this.bodyPart;
-    }
-}
-
-interface Attackable {
-    BodyPart attack();
-
-}
-
-interface Defensable {
-    BodyPart defense();
-
-}
-
-abstract class AbstractRobot implements Attackable, Defensable {
-
-    private String name;
-    private static int hitCount;
-
-    public AbstractRobot(String name) {
-        this.name = name;
-
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public static int getHitCount() {
-        return hitCount;
-    }
-
-    public static void setHitCount(int hitCount) {
-        AbstractRobot.hitCount = hitCount;
-    }
-
-    @Override
-    public BodyPart attack() {
-        BodyPart attackedBodyPart = null;
-        hitCount = (int) (Math.random() * 4);
-        if (hitCount == 0) {
-            attackedBodyPart = BodyPart.arm;
-        } else if (hitCount == 1) {
-            attackedBodyPart = BodyPart.leg;
-        } else if (hitCount == 2) {
-            attackedBodyPart = BodyPart.head;
-        } else if (hitCount == 3) {
-            attackedBodyPart = BodyPart.chest;
+        if (att == def) {
+            System.out.println(String.format("%s атаковал робота %s, атакована %s, защищена %s, удар успешно заблокировн!",
+                    robotFirst.getName(), robotSecond.getName(), att, def));
+        } else if (a <= 0) {
+            System.out.println(String.format("Робот %s нанес решающий удар в %s, это победа!", robotFirst.getName(), att));
+            System.exit(0);
+        } else {
+            System.out.println(String.format("%s атаковал робота %s, атакована %s, защищена %s, нанесено урона %d, осталось жизней (%d).",
+                    robotFirst.getName(), robotSecond.getName(), att, def, damage, a));
         }
-        return attackedBodyPart;
+
+
     }
 
-    @Override
-    public BodyPart defense() {
-        BodyPart defenseBodyPart = null;
-        hitCount = (int) (Math.random() * 4);
-        if (hitCount == 0) {
-            defenseBodyPart = BodyPart.arm;
-        } else if (hitCount == 1) {
-            defenseBodyPart = BodyPart.leg;
-        } else if (hitCount == 2) {
-            defenseBodyPart = BodyPart.head;
-        } else if (hitCount == 3) {
-            defenseBodyPart = BodyPart.chest;
+    static class BodyPart {
+        String bodyPart;
+        public final static BodyPart ARM = new BodyPart("Рука");
+        public final static BodyPart LEG = new BodyPart("Нога");
+        public final static BodyPart HEAD = new BodyPart("Голова");
+        public final static BodyPart CHEST = new BodyPart("Грудь");
+
+        public BodyPart(String bodyPart) {
+            this.bodyPart = bodyPart;
         }
-        return defenseBodyPart;
+
+        @Override
+        public String toString() {
+            return this.bodyPart;
+        }
     }
 
-}
-class Robot extends AbstractRobot {
+    interface Attackable {
+        BodyPart attack();
 
-    public Robot(String name) {
-        super(name);
+    }
+
+    interface Defensable {
+        BodyPart defense();
+
+    }
+
+    abstract static class AbstractRobot implements Attackable, Defensable {
+
+        private String name;
+        private static int hitCount;
+        private int hp = 5;
+
+
+        public AbstractRobot(String name) {
+            this.name = name;
+        }
+
+        public int getHp(int a) {
+            hp = hp - a;
+            return hp;
+        }
+
+        public void setHp(int hp) {
+            this.hp = hp;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
+
+        public static int getHitCount() {
+            return hitCount;
+        }
+
+        public static void setHitCount(int hitCount) {
+            AbstractRobot.hitCount = hitCount;
+        }
+
+        @Override
+        public BodyPart attack() {
+            BodyPart attackedBodyPart = null;
+            hitCount = (int) (Math.random() * 4);
+            if (hitCount == 0) {
+                attackedBodyPart = BodyPart.ARM;
+            } else if (hitCount == 1) {
+                attackedBodyPart = BodyPart.LEG;
+            } else if (hitCount == 2) {
+                attackedBodyPart = BodyPart.HEAD;
+            } else if (hitCount == 3) {
+                attackedBodyPart = BodyPart.CHEST;
+            }
+            return attackedBodyPart;
+        }
+
+        @Override
+        public BodyPart defense() {
+            BodyPart defenseBodyPart = null;
+            hitCount = (int) (Math.random() * 4);
+            if (hitCount == 0) {
+                defenseBodyPart = BodyPart.ARM;
+            } else if (hitCount == 1) {
+                defenseBodyPart = BodyPart.LEG;
+            } else if (hitCount == 2) {
+                defenseBodyPart = BodyPart.HEAD;
+            } else if (hitCount == 3) {
+                defenseBodyPart = BodyPart.CHEST;
+            }
+            return defenseBodyPart;
+        }
+
+        public int damage(BodyPart bodyPart) {
+            int damage = 0;
+            if (bodyPart == BodyPart.ARM) {
+                damage = 1;
+            } else if (bodyPart == BodyPart.LEG) {
+                damage = 1;
+            } else if (bodyPart == BodyPart.HEAD) {
+                damage = 5;
+            } else if (bodyPart == BodyPart.CHEST) {
+                damage = 3;
+            }
+            return damage;
+        }
+    }
+
+    static class Robot extends AbstractRobot {
+
+        public Robot(String name) {
+            super(name);
+        }
+
     }
 }
