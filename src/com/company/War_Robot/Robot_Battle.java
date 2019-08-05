@@ -34,13 +34,13 @@ public class Robot_Battle {
         int a = robotSecond.getHp(damage);
 
         if (att == def) {
-            System.out.println(String.format("%s атаковал робота %s, атакована %s, защищена %s, удар успешно заблокировн!",
+            System.out.println(String.format("%s атаковал робота %s, атакована %s, защищена %s, удар успешно заблокирован!",
                     robotFirst.getName(), robotSecond.getName(), att, def));
         } else if (a <= 0) {
-            System.out.println(String.format("Робот %s нанес решающий удар в %s, это победа!", robotFirst.getName(), att));
+            System.out.println(String.format("Робот %s нанес решающий удар опоненту, это победа!", robotFirst.getName()));
             System.exit(0);
         } else {
-            System.out.println(String.format("%s атаковал робота %s, атакована %s, защищена %s, нанесено урона %d, осталось жизней (%d).",
+            System.out.println(String.format("%s атаковал робота %s, атакована %s, защищена %s, нанесено урона (%d), осталось жизней [%d].",
                     robotFirst.getName(), robotSecond.getName(), att, def, damage, a));
         }
 
