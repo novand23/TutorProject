@@ -32,7 +32,10 @@ public class Test_31_01 {
 }
 
 interface Country{
-
+    String c1 =  "Россия" ;
+    String c2 =  "Украина" ;
+    String c3 =  "Молдова" ;
+    String c4 =  "Беларуссия" ;
 }
 
 
