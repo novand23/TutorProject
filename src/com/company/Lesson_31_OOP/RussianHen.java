@@ -1,6 +1,6 @@
 package com.company.Lesson_31_OOP;
 
-public class RussianHen extends Hen{
+public class RussianHen extends Hen {
 
 
     @Override
@@ -10,7 +10,7 @@ public class RussianHen extends Hen{
 
     @Override
     public String getDescription() {
-        return super.getDescription()+ " " + "Моя страна - " +  +  "Я несу "+getCountOfEggsPerMonth()+" яиц в месяц.";
+        return super.getDescription() + " " + "моя страна - " + Test_31_01.HenFactory.getHen(Country.RUSSIAN.getValue()) + ", я несу " + getCountOfEggsPerMonth() + " яиц в месяц.";
     }
 }
 

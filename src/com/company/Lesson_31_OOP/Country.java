@@ -3,17 +3,17 @@ package com.company.Lesson_31_OOP;
 public enum Country {
     RUSSIAN("Россия"),
     UKRAINA("Украина"),
-    MOLDOVA("Молдовва"),
+    MOLDOVA("Молдова"),
     BELARUSSIA("Белоруссия");
 
-    private String country;
+    private String value;
 
-    Country(String country) {
-        this.country = country;
+    Country(String value){
+        this.value = value;
     }
 
-    public String getCountry() {
-        return country;
+    public String getValue() {
+        return value;
     }
 }
 

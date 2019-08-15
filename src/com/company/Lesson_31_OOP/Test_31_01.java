@@ -28,24 +28,22 @@ package com.company.Lesson_31_OOP;
 public class Test_31_01 {
     public static void main(String[] args) {
         Hen h1 = new RussianHen();
-
+        Hen h2 = new UkrainianHen();
+        Hen h3 = new MoldovanHen();
+        Hen h4 = new BelarusianHen();
         System.out.println(h1.getDescription());
-
+        System.out.println(h2.getDescription());
+        System.out.println(h3.getDescription());
+        System.out.println(h4.getDescription());
 
     }
 
    static class HenFactory {
 
-        public String country;
-
-        public static String getCountry(String country) {
-            return country;
-        }
-
-        public void setCountry(String country) {
-            this.country = country;
-        }
-    }
+       public static String getHen(String value) {
+            return value;
+       }
+   }
 }
 
 
