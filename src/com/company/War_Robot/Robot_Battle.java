@@ -16,6 +16,7 @@ package com.company.War_Robot;
 */
 public class Robot_Battle {
     public static void main(String[] args) {
+        
         Robot r1 = new Robot("Юпитер");
         Robot r2 = new Robot("Сатурн");
 
@@ -36,9 +37,9 @@ public class Robot_Battle {
         if (att == def) {
             System.out.println(String.format("%s атаковал робота %s, атакована %s, защищена %s, удар успешно заблокирован!",
                     robotFirst.getName(), robotSecond.getName(), att, def));
-        } else if (a <= 0) {
+        /*} else if (a <= 0) {
             System.out.println(String.format("Робот %s нанес решающий удар опоненту, это победа!", robotFirst.getName()));
-            System.exit(0);
+            System.exit(0);*/
         } else {
             System.out.println(String.format("%s атаковал робота %s, атакована %s, защищена %s, нанесено урона (%d), осталось жизней [%d].",
                     robotFirst.getName(), robotSecond.getName(), att, def, damage, a));
@@ -76,8 +77,8 @@ public class Robot_Battle {
 
     abstract static class AbstractRobot implements Attackable, Defensable {
 
-        private String name;
         private static int hitCount;
+        private String name;
         private int hp = 5;
 
 
@@ -145,13 +146,13 @@ public class Robot_Battle {
         public int damage(BodyPart bodyPart) {
             int damage = 0;
             if (bodyPart == BodyPart.ARM) {
-                damage = 1;
+                damage = (int) (1 + Math.random() * 2);
             } else if (bodyPart == BodyPart.LEG) {
-                damage = 1;
+                damage = (int) (1 + Math.random() * 2);
             } else if (bodyPart == BodyPart.HEAD) {
-                damage = 5;
+                damage = (int) (1 + Math.random() * 5);
             } else if (bodyPart == BodyPart.CHEST) {
-                damage = 3;
+                damage = (int) (1 + Math.random() * 3);
             }
             return damage;
         }
