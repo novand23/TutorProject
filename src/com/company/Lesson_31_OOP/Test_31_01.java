@@ -26,16 +26,28 @@ package com.company.Lesson_31_OOP;
 9. Все созданные вами классы должны быть в отдельных файлах
 */
 public class Test_31_01 {
-    public static void main (String[]args){
+    public static void main(String[] args) {
+        Hen h1 = new RussianHen();
 
+        System.out.println(h1.getDescription());
+
+
+    }
+
+   static class HenFactory {
+
+        public String country;
+
+        public static String getCountry(String country) {
+            return country;
+        }
+
+        public void setCountry(String country) {
+            this.country = country;
+        }
     }
 }
 
-interface Country{
-    String c1 =  "Россия" ;
-    String c2 =  "Украина" ;
-    String c3 =  "Молдова" ;
-    String c4 =  "Беларуссия" ;
-}
+
 
 
