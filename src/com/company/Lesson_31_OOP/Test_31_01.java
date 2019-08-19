@@ -1,4 +1,5 @@
 package com.company.Lesson_31_OOP;
+
 /* Куриная фабрика
 Написать Фабрику(Factory) по производству кур(Hen)
 1. Создать класс Hen
@@ -27,23 +28,28 @@ package com.company.Lesson_31_OOP;
 */
 public class Test_31_01 {
     public static void main(String[] args) {
-        Hen h1 = new RussianHen();
-        Hen h2 = new UkrainianHen();
-        Hen h3 = new MoldovanHen();
-        Hen h4 = new BelarusianHen();
-        System.out.println(h1.getDescription());
-        System.out.println(h2.getDescription());
-        System.out.println(h3.getDescription());
-        System.out.println(h4.getDescription());
-
+        System.out.println(HenFactory.getHen(Country.UKRAINA).getDescription());
+        System.out.println(HenFactory.getHen(Country.BELARUSSIA).getDescription());
+        System.out.println(HenFactory.getHen(Country.MOLDOVA).getDescription());
+        System.out.println(HenFactory.getHen(Country.RUSSIAN).getDescription());
     }
 
-   static class HenFactory {
-
-       public static String getHen(String value) {
-            return value;
-       }
-   }
+    static class HenFactory {
+        public static Hen getHen(Country country) {
+            switch (country) {
+                case BELARUSSIA:
+                    return new BelarusianHen(Country.BELARUSSIA.getValue());
+                case MOLDOVA:
+                    return new MoldovanHen(Country.MOLDOVA.getValue());
+                case UKRAINA:
+                    return new UkrainianHen(Country.UKRAINA.getValue());
+                case RUSSIAN:
+                    return new RussianHen(Country.RUSSIAN.getValue());
+                default:
+                    return null;
+            }
+        }
+    }
 }
 
 

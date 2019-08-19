@@ -2,6 +2,9 @@ package com.company.Lesson_31_OOP;
 
 public class RussianHen extends Hen {
 
+    public RussianHen(String country) {
+        super(country);
+    }
 
     @Override
     public int getCountOfEggsPerMonth() {
@@ -10,7 +13,7 @@ public class RussianHen extends Hen {
 
     @Override
     public String getDescription() {
-        return super.getDescription() + " " + "моя страна - " + Test_31_01.HenFactory.getHen(Country.RUSSIAN.getValue()) + ", я несу " + getCountOfEggsPerMonth() + " яиц в месяц.";
+        return super.getDescription() + " " + "моя страна - " + country + ", я несу " + getCountOfEggsPerMonth() + " яиц в месяц.";
     }
 }
 
