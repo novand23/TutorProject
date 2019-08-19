@@ -1,14 +1,15 @@
-package com.company.Lesson_31_OOP;
+package com.company.Lesson_31_OOP.Hen;
 
-public class RussianHen extends Hen {
+import com.company.Lesson_31_OOP.Hen.Hen;
 
-    public RussianHen(String country) {
+public class BelarusianHen extends Hen {
+
+    public BelarusianHen(String country) {
         super(country);
     }
-
     @Override
     public int getCountOfEggsPerMonth() {
-        return 42;
+        return 53;
     }
 
     @Override
@@ -16,4 +17,3 @@ public class RussianHen extends Hen {
         return super.getDescription() + " " + "моя страна - " + country + ", я несу " + getCountOfEggsPerMonth() + " яиц в месяц.";
     }
 }
-

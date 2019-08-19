@@ -1,4 +1,4 @@
-package com.company.Lesson_31_OOP;
+package com.company.Lesson_31_OOP.Hen;
 
 abstract class Hen {
 
