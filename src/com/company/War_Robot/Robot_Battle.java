@@ -16,7 +16,7 @@ package com.company.War_Robot;
 */
 public class Robot_Battle {
     public static void main(String[] args) {
-        
+
         Robot r1 = new Robot("Юпитер");
         Robot r2 = new Robot("Сатурн");
 
@@ -34,6 +34,7 @@ public class Robot_Battle {
         int damage = robotFirst.damage(att);
         int a = robotSecond.getHp(damage);
 
+
         if (att == def) {
             System.out.println(String.format("%s атаковал робота %s, атакована %s, защищена %s, удар успешно заблокирован!",
                     robotFirst.getName(), robotSecond.getName(), att, def));
@@ -44,6 +45,8 @@ public class Robot_Battle {
             System.out.println(String.format("%s атаковал робота %s, атакована %s, защищена %s, нанесено урона (%d), осталось жизней [%d].",
                     robotFirst.getName(), robotSecond.getName(), att, def, damage, a));
         }
+
+
 
 
     }
