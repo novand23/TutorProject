@@ -1,4 +1,4 @@
-/*
+package com.company.Lesson_30;/*
 package com.company.Lesson_30;
 */
 /* Сортировка четных чисел из файла
@@ -16,19 +16,19 @@ package com.company.Lesson_30;
 2
 8
 10
-*//*
+*/
 
 
 import java.io.*;
 import java.util.ArrayList;
 
 public class Test_30_HW_01 {
-    public static void main (String[]args) throws IOException {
+    public static void main(String[] args) throws IOException {
         BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
         InputStream inputStream;
         ArrayList<Integer> arr = new ArrayList<>();
 
-        while (true){
+        while (true) {
             try {
                 System.out.println("Введите имя файла: ");
                 String s = bf.readLine();
@@ -40,13 +40,5 @@ public class Test_30_HW_01 {
             }
         }
 
-        while ()
-
-
-            }
-        }
-
-
     }
 }
-*/

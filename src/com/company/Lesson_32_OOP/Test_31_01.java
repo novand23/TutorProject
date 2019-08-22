@@ -24,10 +24,10 @@ import java.io.InputStreamReader;
 */
 public class Test_31_01 {
     public static void main(String[] args) throws IOException {
-    bf();
+        phrases();
     }
 
-    public static void bf() throws IOException {
+    public static void phrases() throws IOException {
         BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
         String s = null;
         while (true) {
