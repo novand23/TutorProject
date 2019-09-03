@@ -24,21 +24,16 @@ import java.io.InputStreamReader;
 public class Test_33_01 {
     public static void main(String[] args) throws IOException {
         BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
-        label:
         while (true) {
             String key = bf.readLine();
-            switch (key) {
-                case "cartoon":
-                    MovieFactory.getMovie(key);
-                    break;
-                case "thriller":
-                    MovieFactory.getMovie(key);
-                    break;
-                case "soapOpera":
-                    MovieFactory.getMovie(key);
-                    break;
-                default:
-                    break label;
+            if (key.equals("cartoon")) {
+                MovieFactory.getMovie(key);
+            } else if (key.equals("thriller")) {
+                MovieFactory.getMovie(key);
+            } else if (key.equals("soapOpera")) {
+                MovieFactory.getMovie(key);
+            } else {
+                break;
             }
         }
     }
