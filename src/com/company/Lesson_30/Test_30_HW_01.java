@@ -21,24 +21,47 @@ package com.company.Lesson_30;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.List;
 
 public class Test_30_HW_01 {
     public static void main(String[] args) throws IOException {
         BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
-        InputStream inputStream;
-        ArrayList<Integer> arr = new ArrayList<>();
+        BufferedReader b = new BufferedReader(new FileReader(bf.readLine()));
+        List<Integer> list = new ArrayList<>();
 
         while (true) {
-            try {
-                System.out.println("Введите имя файла: ");
-                String s = bf.readLine();
-                inputStream = new FileInputStream(s);
-            } catch (FileNotFoundException e) {
-                System.out.println("Файл не существует!");
-                System.out.println("Проверьте правильность написания имени файла и введите повторно: ");
-
+            String s = b.readLine();
+            if (s == null) {
+                break;
+            } else {
+                int number = Integer.parseInt(s);
+                if (number % 2 == 0) {
+                    list.add(number);
+                }
             }
         }
 
+        sort(list);
+
+        for (int i: list){
+            System.out.println(i);
+
+        }
+    }
+
+    private static void sort(List<Integer> list) {
+        int[] array = new int[list.size()];
+        for (int i = 0; i < list.size(); i++) {
+            array[i] = list.get(i);
+        }
+        for (int i = array.length - 1; i > 0; i--) {
+            for (int j = 0; j < i; j++) {
+                if (array[i] > array[j+1]){
+                    int t = array[j];
+                    array[j] = array[j+1];
+                    array[j+1] = t;
+                }
+            }
+        }
     }
 }
