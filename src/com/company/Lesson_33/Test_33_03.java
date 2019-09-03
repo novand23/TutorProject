@@ -19,5 +19,17 @@ package com.company.Lesson_33;
 - Hercule Poirot - автор Agatha Christie
 Вывести список на экран
 */
+/*
 public class Test_33_03 {
+    public static void main (String[]args){
+
+    }
 }
+
+abstract class Book{
+    abstract Book getBook();
+    abstract String getName();
+    public static  String getOutputByBookType(){
+        String agathaChristieOutput =
+    }
+}*/
