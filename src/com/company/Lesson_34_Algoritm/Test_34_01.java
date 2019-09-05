@@ -22,8 +22,11 @@ public class Test_34_01 {
         if (a > b) {
             while (b != 0) {
                 int c = a % b;
-                a = b;
-                b = c;
+                if (c == 0){
+                    return b;
+                }
+                a=b;
+                b=c;
             }
         }
         return b;
