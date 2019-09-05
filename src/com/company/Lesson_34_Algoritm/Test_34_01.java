@@ -14,7 +14,7 @@ public class Test_34_01 {
         BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
         int a = Integer.parseInt(bf.readLine());
         int b = Integer.parseInt(bf.readLine());
-        System.out.println(numberMod(a,b));
+        System.out.println(numberMod(a, b));
 
     }
 
@@ -22,13 +22,22 @@ public class Test_34_01 {
         if (a > b) {
             while (b != 0) {
                 int c = a % b;
-                if (c == 0){
+                if (c == 0) {
                     return b;
                 }
-                a=b;
-                b=c;
+                a = b;
+                b = c;
+            }
+        } else if (b > a) {
+            while (a != 0) {
+                int c = b % a;
+                if (c == 0) {
+                    return a;
+                }
+                b = a;
+                a = c;
             }
         }
-        return b;
+        return a;
     }
 }
