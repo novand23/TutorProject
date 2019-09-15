@@ -19,17 +19,88 @@ package com.company.Lesson_33;
 - Hercule Poirot - автор Agatha Christie
 Вывести список на экран
 */
-/*
-public class Test_33_03 {
-    public static void main (String[]args){
 
+import java.util.LinkedList;
+import java.util.List;
+
+public class Test_33_03 {
+    public static void main(String[] args) {
+        List<Book> books = new LinkedList<Book>();
+        books.add(new MarkTwainBook("Tom Sawyer"));
+        books.add(new AgathaChristieBook("Hercule Poirot"));
+        for (int i = 0; i < books.size(); i++) {
+            System.out.println(books.get(i));
+        }
     }
 }
 
-abstract class Book{
-    abstract Book getBook();
-    abstract String getName();
-    public static  String getOutputByBookType(){
-        String agathaChristieOutput =
+abstract class Book {
+    private String author;
+
+    public Book(String author) {
+        this.author = author;
     }
-}*/
+
+    public abstract Book getBook();
+
+    public abstract String getName();
+
+    private String getOutputByBookType() {
+        String agathaChristieOutput = author + ", " + getBook().getName() + " is a detective";
+        String markTwainOutput = getBook().getName() + " book was written by " + author;
+
+        String output = "output";
+        if (this instanceof MarkTwainBook) {
+            output = markTwainOutput;
+        } else {
+            output = agathaChristieOutput;
+        }
+        return output;
+    }
+
+    public String toString() {
+        return getOutputByBookType();
+    }
+
+}
+
+class MarkTwainBook extends Book {
+    public String bookName = null;
+
+    public MarkTwainBook(String bookName) {
+        super("Mark Twain");
+        this.bookName = bookName;
+    }
+
+    @Override
+    public MarkTwainBook getBook() {
+        return this;
+    }
+
+    @Override
+    public String getName() {
+        return this.bookName;
+    }
+}
+
+class AgathaChristieBook extends Book {
+    public String bookName;
+
+    public AgathaChristieBook(String book) {
+        super("Agatha Christie");
+        this.bookName = book;
+    }
+
+    @Override
+    public AgathaChristieBook getBook() {
+        return this;
+    }
+
+    @Override
+    public String getName() {
+        return this.bookName;
+    }
+}
+
+
+
