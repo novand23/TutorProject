@@ -1,4 +1,4 @@
-package Lesson_35_OOP;
+package com.company.Lesson_35_OOP;
 
 public class Helicopter implements Flyable {
 
