@@ -1,10 +1,12 @@
-package com.company.Lesson_35_OOP;
+package com.company.Lesson_35_OOP.Test_35_01;
 
-public class Plane implements Flyable {
+import com.company.Lesson_35_OOP.Test_35_01.Flyable;
 
-    private int pasenger;
+public class Helicopter implements Flyable {
 
-    public Plane(int pasenger) {
+     private int pasenger;
+
+    public Helicopter(int pasenger) {
         this.pasenger = pasenger;
     }
 
@@ -14,7 +16,7 @@ public class Plane implements Flyable {
 
     @Override
     public String fly() {
-        return null;
+        return "Helicopter is flying";
     }
 
     @Override

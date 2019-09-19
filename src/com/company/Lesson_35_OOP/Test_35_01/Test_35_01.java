@@ -1,4 +1,4 @@
-package com.company.Lesson_35_OOP;
+package com.company.Lesson_35_OOP.Test_35_01;
 
 import java.io.BufferedReader;
 import java.io.IOException;
