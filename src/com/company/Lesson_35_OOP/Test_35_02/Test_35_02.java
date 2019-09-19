@@ -22,25 +22,27 @@ public class Test_35_02 {
         BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
         String s = bf.readLine();
 
-        try {
+
             while (!s.equals("exit")) {
+                try {
                 if (s.contains(".")) {
                     print(Double.parseDouble(s));
                 } else {
                     int num = Integer.parseInt(s);
                     if (num > 0 && num < 128) {
-                        print(num);
+                        print((short) num);
                     } else if (num >= 128) {
                         print(num);
                     } else {
                         print(s);
                     }
                 }
+
+                } catch (NumberFormatException e){
+                    print(s);
+                }
                 s = bf.readLine();
             }
-        } catch (NumberFormatException e){
-        print(s);
-        }
 
     }
 
