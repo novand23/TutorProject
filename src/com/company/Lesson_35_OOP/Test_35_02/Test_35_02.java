@@ -23,23 +23,26 @@ public class Test_35_02 {
         String s = bf.readLine();
 
         try {
-            while () {
-
+            while (!s.equals("exit")) {
                 if (s.contains(".")) {
-                    print(s);
+                    print(Double.parseDouble(s));
                 } else {
                     int num = Integer.parseInt(s);
                     if (num > 0 && num < 128) {
                         print(num);
-                    } else if (num >= 128) {
-                        print(num);
                     } else {
-                        print(s);
+                        short sh = Short.parseShort(s);
+                        if (num >= 128) {
+                            print(sh);
+                        } else {
+                            print(s);
+                        }
                     }
                 }
+                s = bf.readLine();
             }
         } catch (NumberFormatException e){
-            print(s);
+        print(s);
         }
 
     }
@@ -48,12 +51,12 @@ public class Test_35_02 {
         System.out.println("Это тип Double, значение " + value);
     }
     public static void print(String value) {
-        System.out.println("Это тип Double, значение " + value);
+        System.out.println("Это тип String, значение " + value);
     }
     public static void print(short value) {
-        System.out.println("Это тип Double, значение " + value);
+        System.out.println("Это тип short, значение " + value);
     }
     public static void print(Integer value) {
-        System.out.println("Это тип Double, значение " + value);
+        System.out.println("Это тип Integer, значение " + value);
     }
 }
