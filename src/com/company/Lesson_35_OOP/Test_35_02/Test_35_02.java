@@ -30,13 +30,10 @@ public class Test_35_02 {
                     int num = Integer.parseInt(s);
                     if (num > 0 && num < 128) {
                         print(num);
+                    } else if (num >= 128) {
+                        print(num);
                     } else {
-                        short sh = Short.parseShort(s);
-                        if (num >= 128) {
-                            print(sh);
-                        } else {
-                            print(s);
-                        }
+                        print(s);
                     }
                 }
                 s = bf.readLine();
