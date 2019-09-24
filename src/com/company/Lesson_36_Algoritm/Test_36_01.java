@@ -12,8 +12,11 @@ public class Test_36_01 {
             for (int k = i+1; k < array.length; k++)
                 if (array[i] == array[k]) {
                     i++;
+                    k=0;
                 } else {
-                    list.add(array[k]);
+                    if (array[i] != array[]) {
+                        list.add(array[i]);
+                    }
                     k++;
                 }
         }
