@@ -22,7 +22,7 @@ import java.io.InputStreamReader;
 public class HW_35_02 {
     public static void main (String[]args){
         Solution s = new Solution();
-        System.out.println(s);
+
     }
 
 }
@@ -34,11 +34,11 @@ class Solution{
         BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
         String s = bf.readLine();
 
-        if (s == Planet.SUN){
+        if (s.equals(Planet.SUN)){
             thePlanet = Sun.getInstance();
-        } else if (s == Planet.MOON){
+        } else if (s.equals(Planet.MOON)){
             thePlanet = Moon.getInstance();
-        } else if (s == Planet.EARTH){
+        } else if (s.equals(Planet.EARTH)){
             thePlanet = Earth.getInstance();
         } else {
             thePlanet = null;
@@ -48,6 +48,7 @@ class Solution{
     static {
         try {
             readKeyFromConsoleAndInitPlanet();
+            System.out.println(thePlanet);
         } catch (IOException e) {
             e.printStackTrace();
         }
