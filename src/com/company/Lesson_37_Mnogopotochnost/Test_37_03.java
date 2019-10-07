@@ -25,12 +25,16 @@ public class Test_37_03 {
     static int delay = 1000;
 
     public static void main(String[] args) {
+        Violin violin = new Violin("Baskov");
+        Thread thread = new Thread(violin);
+        thread.start();
+
 
     }
 
     public static void sleepNSeconds(int n) {
         try {
-            Thread.sleep(n *delay);
+            Thread.sleep(n * delay);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -38,25 +42,33 @@ public class Test_37_03 {
 
     public static class Violin implements MusicalInstrument {
 
+        private String musician;
+
+        public Violin(String musician) {
+            this.musician = musician;
+        }
+
         @Override
         public void run() {
-
+            Date start = startPlaying();
+            sleepNSeconds(1);
+            Date finish = stopPlaying();
+            long time = finish.getTime() - start.getTime();
+            System.out.println(String.format("\n%s playing %d ms", musician, time));
         }
 
         @Override
         public Date startPlaying() {
-            return null;
+            return new Date();
         }
 
         @Override
         public Date stopPlaying() {
-            return null;
+            return new Date();
         }
+
     }
-
-
 }
-
 
 interface MusicalInstrument extends Runnable {
     Date startPlaying();
