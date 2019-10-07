@@ -7,7 +7,7 @@ public class Test_37_02_Runnable {
         thread.start();
     }
 
-    public static class SecondThread implements Runnable{
+    public static class SecondThread implements Runnable {
 
         @Override
         public void run() {
@@ -15,4 +15,3 @@ public class Test_37_02_Runnable {
         }
     }
 }
-івааіфва
