@@ -5,6 +5,7 @@ public class Test_37_02_Runnable {
         SecondThread task = new SecondThread();
         Thread thread = new Thread(task);
         thread.start();
+        System.out.println("SDA");
     }
 
     public static class SecondThread implements Runnable {
