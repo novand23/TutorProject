@@ -40,9 +40,8 @@ class Test_38_01_Join {
 
     static List<String> getList(int n) {
         List<String> list = new ArrayList<>();
-        int a = (int) (1 + Math.random() * n + 1);
-        for (int i = 0; i < list.size(); i++) {
-            list.add("String " + a);
+        for (int i = 0; i < n; i++) {
+            list.add("String " + i);
         }
 
         return list;
