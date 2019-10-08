@@ -29,9 +29,9 @@ public class Test_38_02 {
         Cat cat1 = new Cat("Barsi");
         Cat cat2 = new Cat("Deni");
         cat1.start();
-        cat1.join();
+
         cat2.start();
-        cat2.join();
+
 
     }
 
