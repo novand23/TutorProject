@@ -30,10 +30,11 @@ secondThread : String 1
 secondThread : String 20
 */
 class Test_38_01_Join {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         PrintListThread firstThread = new PrintListThread("firstThread");
         PrintListThread secondThread = new PrintListThread("secondThread");
         firstThread.start();
+        firstThread.join();
         secondThread.start();
 
     }
