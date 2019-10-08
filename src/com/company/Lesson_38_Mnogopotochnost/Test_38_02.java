@@ -37,7 +37,7 @@ public class Test_38_02 {
 
     public static void investigateWorld(){
         try {
-            Thread.sleep(1000);
+            Thread.sleep(200);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
