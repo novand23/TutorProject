@@ -1,8 +1,10 @@
 package com.company.Lesson_38_Mnogopotochnost;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
+
+import static com.company.Lesson_38_Mnogopotochnost.Test_38_01_Join.getList;
+import static com.company.Lesson_38_Mnogopotochnost.Test_38_01_Join.printList;
 
 /* join
 1. Создать класс PrintListThread, унаследовать его от Thread
@@ -27,25 +29,30 @@ secondThread : String 1
 ...
 secondThread : String 20
 */
-public class Test_38_01_Join {
+class Test_38_01_Join {
     public static void main(String[] args) {
+        PrintListThread firstThread = new PrintListThread("firstThread");
+        PrintListThread secondThread = new PrintListThread("secondThread");
+        firstThread.start();
+        secondThread.start();
 
     }
 
-    static void getList(int n) {
+    static List<String> getList(int n) {
         List<String> list = new ArrayList<>();
         int a = (int) (1 + Math.random() * n + 1);
         for (int i = 0; i < list.size(); i++) {
             list.add("String " + a);
         }
+
+        return list;
     }
 
     static void printList(List<String> list, String threadName) {
         for (String text : list) {
             System.out.println(threadName + " : " + text);
+
         }
-
-
     }
 }
 
@@ -54,11 +61,11 @@ class PrintListThread extends Thread {
     private String name;
 
     public PrintListThread(String name) {
-        this.name = name;
+        super(name);
     }
 
     @Override
     public void run() {
-        Test_38_01_Join.printList();
+        printList(getList(5), name);
     }
 }
