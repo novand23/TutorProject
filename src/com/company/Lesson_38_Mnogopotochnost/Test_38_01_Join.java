@@ -57,14 +57,12 @@ class Test_38_01_Join {
 
 class PrintListThread extends Thread {
 
-    private String name;
-
-    public PrintListThread(String name) {
+    PrintListThread(String name) {
         super(name);
     }
 
     @Override
     public void run() {
-        printList(getList(5), name);
+        printList(getList(5), getName());
     }
 }
