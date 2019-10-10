@@ -29,7 +29,6 @@ public class Test_38_02 {
         Cat cat1 = new Cat("Barsi");
         Cat cat2 = new Cat("Deni");
         cat1.start();
-
         cat2.start();
 
     }
