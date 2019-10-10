@@ -28,6 +28,7 @@ public class Test_39_01 {
         Clock clock = new Clock();
         Thread.sleep(2000);
         isStopped = true;
+        clock.join();
         System.out.println("Clock has to be stopped");
         Thread.sleep(1000);
         System.out.println("Double-check");
