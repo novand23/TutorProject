@@ -32,7 +32,6 @@ public class Test_38_02 {
 
         cat2.start();
 
-
     }
 
     public static void investigateWorld(){
