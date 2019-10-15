@@ -25,13 +25,13 @@ public class Test_40_01 {
     static List<String> list = new ArrayList<>();
 
     static {
-        for (int i = 0; i <= 5; i++) {
+        for (int i = 0; i < 5; i++) {
             list.add("Строка " + i);
         }
     }
 
     public static void main(String[] args) {
-        Countdown countdown = new Countdown(3);
+        Countdown countdown = new Countdown(5);
         Thread thread = new Thread(countdown);
         thread.start();
 
@@ -39,16 +39,16 @@ public class Test_40_01 {
 }
 
 class Countdown implements Runnable {
-    private int countFrom;
+    private static int countFrom;
 
     public Countdown(int countFrom) {
         this.countFrom = countFrom;
     }
 
-    public static void printCountdown(List<String> list, int countFrom) throws InterruptedException {
+    public static void printCountdown() throws InterruptedException {
         for (int i = countFrom-1; i >= 0; i--) {
             Thread.sleep(500);
-            System.out.println(list.get(i));
+            System.out.println(Test_40_01.list.get(i));
         }
     }
 
@@ -56,7 +56,7 @@ class Countdown implements Runnable {
     public void run() {
         if (countFrom >= 0) {
             try {
-                printCountdown(Test_40_01.list, countFrom);
+                printCountdown();
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
