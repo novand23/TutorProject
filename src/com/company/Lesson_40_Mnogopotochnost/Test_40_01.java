@@ -25,7 +25,7 @@ public class Test_40_01 {
     static List<String> list = new ArrayList<>();
 
     static {
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i <= 5; i++) {
             list.add("Строка " + i);
         }
     }
