@@ -54,26 +54,37 @@ class Clock1 extends Thread {
     }
 
     public static void printTime() throws InterruptedException {
-        while (!Test_39_03.isStopped) {
-            if (hours == 23 & minutes == 59 & seconds == 59) {
+
+        seconds++;
+        if (seconds == 60) {
+            minutes++;
+            seconds = 0;
+        }
+        if (minutes == 60) {
+            hours++;
+            minutes = 0;
+        }
+        if (hours ==24){
+
+        }
+
+            /*if (hours == 23 & minutes == 60 & seconds == 60) {
                 hours = 0;
                 minutes = 0;
-                seconds = 1;
+                seconds = 0;
                 System.out.println("В г. Лондон сейчас полночь!");
                 Thread.sleep(1000);
-            } else if (minutes == 59 & seconds == 59) {
+            } else if (minutes == 60 & seconds == 60) {
                 minutes = 0;
                 seconds = 0;
                 hours++;
             } else if (seconds == 60) {
                 seconds = 0;
                 minutes++;
-            } else {
-                seconds++;
             }
             System.out.println("В г. " + cityName + " сейчас " + hours + ":" + minutes + ":" + seconds + "!");
             Thread.sleep(1000);
-        }
+            seconds++;*/
     }
 
     @Override
