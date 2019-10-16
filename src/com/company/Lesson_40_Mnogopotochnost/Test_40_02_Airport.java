@@ -37,6 +37,13 @@ public class Test_40_02_Airport {
     }
 
     public static Runway runway;
+
+    public static void main (String[]args){
+        Plane plane1 = new Plane("747");
+        Plane plane2 = new Plane("545");
+        Plane plane3 = new Plane("997");
+
+    }
 }
 
 class Runway {
@@ -46,14 +53,16 @@ class Runway {
         return thread;
     }
 
-    public void setThread(Thread thread) {
-        this.thread = thread;
+    public void setThread(Thread thread) throws InterruptedException {
+        if (thread == null) {
+            this.thread = thread;
+        } else {
+            thread.join();
+        }
     }
 }
 
 class Plane extends Thread {
-    private String name;
-
 
     public Plane(String name) {
         super(name);
@@ -65,13 +74,14 @@ class Plane extends Thread {
     @Override
     public void run() {
         while (!isAlreadyTakenOff) {
-            if () {
+            if (Test_40_02_Airport.runway == null) {
                 System.out.println(getName() + " взлетает");
                 try {
                     Test_40_02_Airport.takingOff();
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
+
                 System.out.println(getName() + " уже в небе");
                 isAlreadyTakenOff = true;
             } else {
